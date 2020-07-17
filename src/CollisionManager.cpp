@@ -189,7 +189,7 @@ bool CollisionManager::lineAABBCheck(Ship* object1, GameObject* object2)
 	{
 		switch (object2->getType()) {
 		case TARGET:
-			std::cout << "Collision with Obstacle!" << std::endl;
+			/*std::cout << "Collision with Obstacle!" << std::endl;*/
 			SoundManager::Instance().playSound("yay", 0);
 
 			break;
@@ -217,7 +217,7 @@ bool CollisionManager::LOSCheck(DisplayObject* from, DisplayObject* to, DisplayO
 
 	if (lineRectCheck(lineStart, lineEnd, boxStart, boxWidth, boxHeight))
 	{
-		std::cout << "No LOS - Collision with Obstacle!" << std::endl;
+		/*std::cout << "No LOS - Collision with Obstacle!" << std::endl;*/
 		
 		return false;
 	}
