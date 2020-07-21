@@ -5,6 +5,7 @@ SoundManager::SoundManager()
 {
 	Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 2048);
 	panReset();
+	load("../Assets/audio/528620__erokia__ambient-wave-4000.wav", "ambience", SOUND_SFX);
 }
 
 SoundManager::~SoundManager()
@@ -60,7 +61,7 @@ void SoundManager::unload(const std::string& id, const SoundType type)
 	}	
 }
 
-void SoundManager::playMusic(const std::string& id, const int loop/* = -1 */, const int fade_in/* = 0 */)
+void SoundManager::playMusic(const std::string& id, const int loop/* = -1 */, const int fade_in /*= 0 */)
 {	
 	std::cout << "Playing music..." << fade_in << std::endl;
 	if (Mix_FadeInMusic(m_music[id], loop, fade_in) == -1)
@@ -103,7 +104,7 @@ void SoundManager::playSound(const std::string& id, const int loop/* = 0 */, con
 
 void SoundManager::setMusicVolume(const int vol) const
 {
-	if (vol >= 0 && vol <= 128)
+	if (vol >= 0 && vol <= 50)
 	{
 		Mix_VolumeMusic(vol);
 	}
@@ -111,7 +112,7 @@ void SoundManager::setMusicVolume(const int vol) const
 
 void SoundManager::setSoundVolume(const int vol) const
 {
-	if (vol >= 0 && vol <= 128)
+	if (vol >= 0 && vol <= 50)
 	{
 		Mix_Volume(-1, vol);
 	}	

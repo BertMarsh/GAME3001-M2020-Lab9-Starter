@@ -217,4 +217,5 @@ void PlayScene::start()
 	m_pObstacle = new Obstacle();
 	addChild(m_pObstacle);
 	
+	SoundManager::Instance().playSound("ambience");
 }
