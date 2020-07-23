@@ -60,6 +60,7 @@ void StartScene::handleEvents()
 void StartScene::start()
 {
 	const SDL_Color orange = { 196, 105, 0, 255 };
+
 	m_pStartLabel = new Label("START SCENE", "Consolas", 80, orange, glm::vec2(400.0f, 40.0f));
 	m_pStartLabel->setParent(this);
 	addChild(m_pStartLabel);
