@@ -41,6 +41,7 @@ void StartScene::clean()
 	removeAllChildren();
 }
 
+
 void StartScene::handleEvents()
 {
 	EventManager::Instance().update();
